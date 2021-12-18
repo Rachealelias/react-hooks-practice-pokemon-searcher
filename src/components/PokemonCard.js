@@ -2,7 +2,7 @@ import React, {useState}from "react";
 import { Card } from "semantic-ui-react";
 
 
-function PokemonCard({...pokee}) {
+function PokemonCard({sprites, name, hp}) {
 //console.log(pokee)
   const [displayFront, setDisplayFront] = useState(true)
 
@@ -14,15 +14,15 @@ function PokemonCard({...pokee}) {
     <Card>
       <div onClick={handleClick}>
         <div className="image">
-          <img src={displayFront ? pokee.sprites.front : pokee.sprites.back}alt="oh no!" />
+          <img src={displayFront ? sprites.front : sprites.back}alt="oh no!" />
         </div>
         <div className="content">
-          <div className="header">{pokee.name}</div>
+          <div className="header">{name}</div>
         </div>
         <div className="extra content">
           <span>
             <i className="icon heartbeat red" />
-            {pokee.hp}
+            {hp}
           </span>
         </div>
       </div>

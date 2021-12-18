@@ -20,7 +20,7 @@ function PokemonPage() {
     })
   }, [])
 
-  const handleSearch = pokemon.filter((poke) =>
+  const pokemonArray = pokemon.filter((poke) =>
   poke.name.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -32,7 +32,7 @@ function PokemonPage() {
       <br />
       <Search search={search} onSearch={setSearch}/>
       <br />
-      <PokemonCollection  pokemon={pokemon}/>
+      <PokemonCollection  pokemon={pokemonArray}/>
     </Container>
   );
 }
